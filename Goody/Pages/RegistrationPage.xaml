@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Goody.Pages.RegistrationPage"
+             xmlns:local="clr-namespace:Goody.RendererPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="RegistrationLabelStyle">
+                <Setter Property="Text" Value="Регистрация"/>
+                <Setter Property="FontFamily" Value="Verdana, Geneva, sans-serif"/>
+                <Setter Property="FontSize" Value="40"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            </Style>
+            
+            <!--<Style TargetType="Entry" x:Key="EntryRegistrationStyle">
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HeightRequest" Value="60"/>
+                <Setter Property="WidthRequest" Value="300"/>
+            </Style>-->
+            
+            <Style TargetType="Frame" x:Key="FrameRegistrationStyle">
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HeightRequest" Value="15"/>
+                <Setter Property="WidthRequest" Value="300"/>
+                <Setter Property="CornerRadius" Value="25"/>
+                <Setter Property="IsClippedToBounds" Value="true"/>
+                <Setter Property="BorderColor" Value="#e9e9e9"/>
+            </Style>
+            
+            <Style TargetType="local:CustomEntry" x:Key="CustomEntryStyle">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="PlaceholderColor" Value="Black"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="TranslationY" Value="-4"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+<!--     title image (as background)      -->
+            <Grid Grid.Row="0">
+                <Image Source="titleBackground"
+                       Aspect="AspectFill"
+                       VerticalOptions="FillAndExpand"
+                       HorizontalOptions="FillAndExpand"/>
+            </Grid>
+<!--     title       -->
+            <Grid Grid.Row="1">
+                <Label Style="{StaticResource RegistrationLabelStyle}"/>    
+            </Grid>
+            
+<!--      stack of input fields      -->
+            <Grid Grid.Row="3" Padding="15">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Grid Grid.Row="0">
+                        <Frame Style="{StaticResource FrameRegistrationStyle}">
+                            <StackLayout>
+                                <local:CustomEntry Style="{StaticResource CustomEntryStyle}"
+                                                   Placeholder="Мобильный телефон и электронная почта"/> 
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                    
+                    <Grid Grid.Row="2">
+                        <Frame Style="{StaticResource FrameRegistrationStyle}">
+                            <StackLayout>
+                                <local:CustomEntry Style="{StaticResource CustomEntryStyle}"
+                                                   Placeholder="Логин"/> 
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                    
+                    <Grid Grid.Row="4">
+                        <Frame Style="{StaticResource FrameRegistrationStyle}">
+                            <StackLayout>
+                                <local:CustomEntry Style="{StaticResource CustomEntryStyle}"
+                                                   Placeholder="Имя и Фамилия"/> 
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                    
+                </Grid>
+            </Grid>
+            
+            
+<!--     data of birth       -->
+            <Grid Grid.Row="4" Padding="15">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Grid Grid.Row="0">
+                        <Label Style="{StaticResource RegistrationLabelStyle}"
+                               FontSize="Medium"
+                               TextColor="Gray"
+                               HorizontalOptions="StartAndExpand"
+                               Text="Дата рождения"/>
+                    </Grid>
+                    
+                    
+                    <Grid Grid.Row="1">
+                        <Frame Style="{StaticResource FrameRegistrationStyle}">
+                            <StackLayout VerticalOptions="FillAndExpand"
+                                         HorizontalOptions="FillAndExpand">
+                                <Grid 
+                                  BackgroundColor="Green">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="1"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="1"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <Grid Grid.Column="0"></Grid>
+                                
+                                <Grid Grid.Column="1"
+                                      BackgroundColor="#e9e9e9"
+                                      VerticalOptions="FillAndExpand"
+                                      HorizontalOptions="FillAndExpand"/>
+                                
+                                <Grid Grid.Column="2"></Grid>
+                                <Grid Grid.Column="3"></Grid>
+                                <Grid Grid.Column="4"></Grid>
+                                
+                            </Grid>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                    
+                    
+                </Grid>
+            </Grid>
+            
+<!--     end      -->
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
